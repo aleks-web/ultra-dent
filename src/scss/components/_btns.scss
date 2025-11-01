@@ -1,0 +1,23 @@
+/* Основной класс кнопки */
+.simple-btn {
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s all;
+
+    &:hover {
+        background-color: var(--main-color-hover);
+    }
+
+    &:active {
+        background-color: var(--main-color-active);
+    }
+}

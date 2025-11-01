@@ -1,0 +1,257 @@
+.header {
+    --btn-padding: 6px;
+    --btn-height: 30px;
+
+    @media (min-width: 300px) {
+        --btn-height: 35px;
+        --btn-padding: 8px;
+    }
+
+    // Grid обертка для шапки
+    &__grid {
+        display: grid;
+        gap: 10px;
+        grid-template-areas:
+            "logo"
+            "mobileMenuBtn"
+            "callbackBtn";
+
+        @media (min-width: 300px) {
+            grid-template-areas:
+                "logo mobileMenuBtn"
+                "callbackBtn callbackBtn";
+        }
+
+        @media (min-width: 450px) {
+            grid-template-areas:
+                "logo mobileMenuBtn";
+        }
+
+        @media (min-width: 800px) {
+            grid-template-areas:
+                "logo time time mobileMenuBtn";
+        }
+
+        @media (min-width: 960px) {
+            grid-template-areas:
+                "logo time time mobileMenuBtn";
+        }
+
+        @media (min-width: 1440px) {
+            gap: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    // Item обобщенный
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @media (min-width: 1440px) {
+            width: auto;
+            min-width: max-content;
+        }
+
+        // Item логотипа
+        &-logo {
+            grid-area: logo;
+            justify-content: center;
+            
+            @media (min-width: 300px) {
+                justify-content: start;
+            }
+    
+            &-img {
+                max-width: 140px;
+                width: 100%;
+                transition: .2s all;
+
+                @media (min-width: 1536px) {
+                    max-width: 160px;
+                }
+            }
+        }
+    
+        // Item мобильной кнопки меню
+        &-btns {
+            grid-area: mobileMenuBtn;
+            justify-content: end;
+            gap: 10px;
+
+            .header-callback-btn {
+                display: none;
+                max-width: 200px;
+                min-width: 135px;
+
+                @media (min-width: 450px) {
+                    display: block;
+                }
+
+                @media (min-width: 1440px) {
+                    min-width: 200px;
+                }
+            }
+
+            .header-menu-btn {
+                @media (min-width: 1440px) {
+                    display: none;
+                }
+            }
+        }
+
+        // Item обратного звонка
+        &-mobile-callback {
+            grid-area: callbackBtn;
+            justify-content: end;
+
+            @media (min-width: 450px) {
+                display: none;
+            }
+        }
+
+        // Item время работы
+        &-work-time {
+            grid-area: time;
+            justify-content: center;
+            display: none;
+
+            @media (min-width: 800px) {
+                display: flex;
+            }
+        }
+
+        // Item верхнего меню
+        &-top-menu {
+            grid-area: topMenu;
+            display: none;
+            width: 100%;
+            max-width: 980px;
+
+            @media (min-width: 1440px) {
+                display: flex;
+            }
+        }
+    }
+}
+
+.header-callback-btn {
+    max-width: 100%;
+    padding: var(--btn-padding);
+    height: var(--btn-height);
+    font-weight: bold;
+}
+
+/* Класс кнопки меню */
+.header-menu-btn {
+    --width: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: var(--btn-padding);
+    max-width: var(--width);
+    min-width: var(--width);
+    height: var(--btn-height);
+
+    @media (min-width: 300px) {
+        --width: 60px;
+    }
+
+    @media (min-width: 340px) {
+        --width: 80px;
+    }
+
+    &.active {
+        .header-menu-btn__line {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .header-menu-btn__close {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        max-width: 21px;
+        border-radius: 2px;
+        transition: inherit;
+    }
+
+    &__close {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:hover {
+        .header-menu-btn__line:nth-child(2) {
+            transform: translateX(-3px);
+        }
+
+        .header-menu-btn__line:nth-child(3) {
+            transform: translateX(-6px);
+        }
+    }
+}
+
+/* Класс режима работы в шапке */
+.header-work-time {
+    color: #686868;
+    display: grid;
+    grid-template-areas:
+        "svg label time";
+    
+    @media (min-width: 1440px) {
+        grid-template-areas:
+            "svg label"
+            "svg time";
+    }
+
+    &__svg {
+        grid-area: svg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 6px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__label {
+        grid-area: label;
+        margin-right: 5px;
+    }
+
+    &__time {
+        grid-area: time;
+        font-weight: bold;
+    }
+}
+
+/* Класс верхнего меню */
+.header-top-menu {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    list-style: none;
+    width: inherit;
+
+    &__link {
+        min-width: max-content;
+        display: block;
+        text-decoration: auto;
+        color: #686868;
+        font-weight: bold;
+    }
+}

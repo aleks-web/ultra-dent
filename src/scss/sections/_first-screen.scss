@@ -1,0 +1,10 @@
+// Первый экран
+.first-screen {
+    height: 100dvh;
+    background: linear-gradient(90deg,rgba(231, 232, 234, 1) 0%, rgba(240, 242, 245, 1) 70%);
+    padding-top: 10px;
+
+    @media (min-width: 1440px) {
+        padding-top: 20px;
+    }
+}

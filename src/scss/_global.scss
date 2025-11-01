@@ -1,0 +1,25 @@
+@forward "vars";
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @media (min-width: 300px) {
+    padding: 0 15px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0 20px;
+  }
+}
