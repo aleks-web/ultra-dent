@@ -8,12 +8,21 @@ export default class Timer {
     elMin = null;
     elSec = null;
 
+    /**
+     * @param {Date} date
+     */
     isDate(date) { return date instanceof Date }
 
+    /**
+     * @param {Date} deadline
+     */
     constructor(deadline) {
         this.setDeadline(deadline);
     }
 
+    /**
+     * @param {Date} date
+     */
     setDeadline(date) {
         if (this.isDate(date)) {
             this.#deadline = date;
@@ -27,6 +36,10 @@ export default class Timer {
         return this.#deadline;
     }
 
+    /**
+     * @param {String} selector
+     * @param {String} type
+     */
     setElement(selector, type = null) {
         const types = ["Days", "Hours", "Min", "Sec"];
 
@@ -59,12 +72,19 @@ export default class Timer {
         return true;
     }
 
-    // Склонения числительных
+    /**
+     * Склонения числительных
+     * @param {Number} num
+     * @param {Array} words
+     */
     declensionNum (num, words) {
         return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]];
     };
 
-    // Обновление таймера
+    /**
+     * Обновление таймера
+     * @param {Timer} timer
+     */
     updateTimer(timer) {
         const nowDate = new Date();
         const diff = Math.max(0, timer.getDeadline() - nowDate);
@@ -95,7 +115,10 @@ export default class Timer {
     };
 
 
-    // Запуск таймера
+    /**
+     * Запуск таймера
+     * @param {Timer} timer
+     */
     start(timer) {
         timer.updateTimer(timer);
         timer.timerId = setInterval(() => { timer.updateTimer(timer) }, 1000);

@@ -353,13 +353,39 @@
             font-size: 18px;
         }
     }
+
+    &__rating {
+        display: flex;
+        gap: 5px;
+
+        @container (min-width: 450px) {
+            gap: 8px;
+        }
+
+        svg {
+            width: 25px;
+            color: #FECE0F;
+            transition: .2s all;
+            cursor: pointer;
+
+            &:hover {
+                color: #FFEEAA;
+            }
+
+            @container (min-width: 300px) {
+                width: 30px;
+            }
+
+            @container (min-width: 500px) {
+                width: 40px;
+            }
+        }
+    }
 }
 
 // Карточка-смартфон
 .card-phone {
     position: relative;
-    aspect-ratio: 9 / 16;
-    max-width: 300px;
     --radius: 45px;
     --right-negative: 5px;
     --bottom-negative: 5px;

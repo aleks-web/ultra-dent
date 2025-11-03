@@ -47,7 +47,26 @@
 
     &__wrap {
         display: flex;
-        gap: 10px;
+        gap: 20px;
+        flex-direction: column;
+
+        @media (min-width: 340px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 800px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (min-width: 960px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (min-width: 1440px) {
+            gap: 50px;
+        }
     }
 
     &__item {

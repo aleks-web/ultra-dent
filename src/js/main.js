@@ -20,3 +20,14 @@ import "./init/useHeader"; // Для работы шапки сайта
 
 /* Import useMobileMenu */
 import "./init/useMobileMenu"; // Для мобильного меню
+
+import Slider from "./classes/Slider";
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const slider = new Slider();
+    slider.init();
+
+
+
+});

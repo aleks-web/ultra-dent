@@ -5,6 +5,9 @@ export default class SiteMenu {
     elementTrigger = null;
     resizeObserver = null;
 
+    /**
+     * @param {HTMLElement|null} elementTrigger
+     */
     constructor(elementTrigger = null) {
         if (elementTrigger) {
             this.setElementTrigger(elementTrigger);
@@ -16,9 +19,16 @@ export default class SiteMenu {
         SiteMenu.instance = this;
     }
 
-    // Метод проверки, является ли элемент узлом DOM
+    /**
+     * Метод проверки, является ли элемент узлом DOM
+     * @param {any} el
+     */
     isDOM(el) { return el instanceof Node };
 
+    /**
+     * @param {HTMLElement} element
+     * @param {Number} duration
+     */
     fadeUp(element, duration = 300) {
         let opacity = 0;
         let translateY = 30;
@@ -59,7 +69,10 @@ export default class SiteMenu {
         this.setObserver();
     }
 
-    // Устанавливаем элемент DOM как элемент триггер, клик по которому откроет меню
+    /**
+     * Устанавливаем элемент DOM как элемент триггер, клик по которому откроет меню
+     * @param {HTMLElement} elementTrigger
+     */
     setElementTrigger(elementTrigger) {
         if (this.isDOM(elementTrigger)) {
 

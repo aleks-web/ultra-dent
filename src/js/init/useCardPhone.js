@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('click', (e) => {
             if (!e.target.closest('.card-phone__btn-play')) {
                 el.classList.remove('card-phone_plays');
-                el.querySelector('.card-phone__iframe').remove();
+                const iframe = el.querySelector('.card-phone__iframe');
+                if (iframe) {
+                    iframe.remove();
+                }
             }
         });
     });
