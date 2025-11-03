@@ -1,0 +1,81 @@
+.discount-section {
+    color: #686868;
+
+    &__container {
+        container-type: inline-size;
+    }
+
+    &__wrap {
+        background-color: #ffebda;
+        border-radius: var(--radius);
+        overflow: hidden;
+        --radius: 20px;
+
+        @container (min-width: 300px) {
+            --radius: 30px;
+        }
+
+        @container (min-width: 450px) {
+            --radius: 40px;
+        }
+    }
+
+    &__left {
+        padding: 15px;
+
+        @container (min-width: 300px) {
+            padding: 20px;
+        }
+
+        @container (min-width: 450px) {
+            padding: 25px;
+        }
+    }
+
+    &__right {
+        width: 100%;
+    }
+
+    &__content {
+        font-size: 14px;
+
+        @container (min-width: 300px) {
+            font-size: 16px;
+        }
+
+        @container (min-width: 340px) {
+            font-size: 18px;
+        }
+    }
+
+    &__image {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 2px solid var(--main-color);
+
+        img {
+            width: 100%;
+            display: flex;
+        }
+    }
+
+    &__btn {
+        border-radius: 50px;
+        margin: 0 auto;
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+
+        & ~ span {
+            font-size: 14px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 20px;
+    }
+}

@@ -79,46 +79,6 @@
     }
 }
 
-// Карточка отзыва
-.card-rev {
-    --main-card-color: #FB9A49;
-    border: 1px solid var(--main-card-color);
-    padding: 8px; //16px
-    border-radius: 20px; //40px
-    width: inherit;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @container (min-width: 300px) {
-        padding: 10px;
-        border-radius: 30px;
-    }
-
-    @container (min-width: 450px) {
-        padding: 15px;
-        border-radius: 40px;
-    }
-
-    &__header {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-weight: 600;
-    }
-
-    &__author {
-        color: #2F6BEA;
-        font-size: 16px; // 32px
-    }
-
-    &__date {
-        color: #B5B5B5;
-        font-size: 15px; // 22px
-    }
-}
-
 // Картчока шага
 .card-step {
 
@@ -241,6 +201,10 @@
             gap: 10px;
         }
 
+        @container (min-width: 500px) {
+            font-size: 20px;
+        }
+
         @container (min-width: 600px) {
             font-size: 24px;
         }
@@ -263,7 +227,7 @@
     }
 
     &__title {
-        
+
     }
 
     &__image {
@@ -284,6 +248,114 @@
         img {
             object-fit: cover;
             width: 100%;
+        }
+    }
+}
+
+// Карточка отзыва
+.card-rev {
+    --main-card-color: #FB9A49;
+    --gap: 10px;
+    border: 1px solid var(--main-card-color);
+    padding: 10px;
+    border-radius: 20px; //40px
+    width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--gap);
+
+    @container (min-width: 300px) {
+        padding: 18px;
+        border-radius: 30px;
+    }
+
+    @container (min-width: 450px) {
+        padding: 25px;
+        border-radius: 40px;
+    }
+
+    @container (min-width: 500px) {
+        padding: 30px;
+    }
+
+    @container (min-width: 600px) {
+        padding: 32px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        font-weight: 600;
+    }
+
+    &__author {
+        color: #2F6BEA;
+        font-size: 17px;
+
+        @container (min-width: 300px) {
+            font-size: 18px;
+        }
+
+        @container (min-width: 340px) {
+            font-size: 20px;
+        }
+
+        @container (min-width: 450px) {
+            font-size: 22px;
+        }
+
+        @container (min-width: 500px) {
+            font-size: 24px;
+        }
+
+        @container (min-width: 600px) {
+            font-size: 32px;
+        }
+    }
+
+    &__date {
+        color: #B5B5B5;
+        font-size: 15px;
+
+        @container (min-width: 300px) {
+            font-size: 17px;
+        }
+
+        @container (min-width: 340px) {
+            font-size: 18px;
+        }
+
+        @container (min-width: 500px) {
+            font-size: 20px;
+        }
+
+        @container (min-width: 600px) {
+            font-size: 22px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    &__content {
+        font-size: 14px;
+
+        @container (min-width: 300px) {
+            font-size: 15px;
+        }
+
+        @container (min-width: 450px) {
+            font-size: 16px;
+        }
+
+        @container (min-width: 500px) {
+            font-size: 18px;
         }
     }
 }
