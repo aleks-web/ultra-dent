@@ -1,7 +1,5 @@
 // Первый экран
 .first-screen {
-    background: linear-gradient(180deg, rgb(231, 232, 234) 0%, rgb(240, 242, 245) 70%);
-    padding-top: 10px;
     overflow: hidden;
 
     @media (min-width: 1440px) {

@@ -79,11 +79,6 @@
     }
 }
 
-// Картчока шага
-.card-step {
-
-}
-
 // Карточка-достижение
 .card-progress {
     display: flex;
@@ -357,5 +352,83 @@
         @container (min-width: 500px) {
             font-size: 18px;
         }
+    }
+}
+
+// Карточка-смартфон
+.card-phone {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    max-width: 300px;
+    --radius: 45px;
+    --right-negative: 5px;
+    --bottom-negative: 5px;
+
+    &_plays {
+        .card-phone__btn-play {
+            display: none;
+        }
+
+        .card-phone__preview {
+            display: none;
+        }
+    }
+
+    &__btn-play {
+        width: 50px;
+        height: 50px;
+        color: white;
+        z-index: 20;
+        position: absolute;
+        cursor: pointer;
+        transition: .2s all;
+        color: white;
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__border {
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+            content: '';
+
+        }
+
+        &-img {
+            width: 100%;
+            z-index: 10;
+            position: relative;
+        }
+    }
+
+    &__preview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - var(--right-negative));
+        height: calc(100% - var(--bottom-negative));
+        object-fit: cover;
+        border-radius: var(--radius);
+    }
+
+    &__iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - var(--right-negative));
+        width: calc(100% - var(--bottom-negative));
+        z-index: 0;
+        border-radius: 70px;
+        overflow: hidden;
     }
 }

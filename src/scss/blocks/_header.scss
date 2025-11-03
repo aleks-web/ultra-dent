@@ -1,10 +1,20 @@
+/* Шапка сайта */
 .header {
     --btn-padding: 6px;
     --btn-height: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 10px 0 10px 0;
+    background-color: #E8E9EB;
 
     @media (min-width: 300px) {
         --btn-height: 35px;
         --btn-padding: 8px;
+    }
+
+    @media (min-width: 450px) {
+        padding: 10px 0 10px 0;
     }
 
     // Grid обертка для шапки
@@ -133,6 +143,47 @@
             @media (min-width: 1440px) {
                 display: flex;
             }
+        }
+    }
+
+    &_mini {
+        --btn-height: 25px;
+
+        @media (min-width: 300px) {
+            --btn-height: 30px;
+        }
+
+        @media (min-width: 1440px) {
+            --btn-height: 35px;
+        }
+
+        .header__item-logo-img {
+            max-width: 100px;
+
+            @media (min-width: 1440px) {
+                max-width: 140px;
+            }
+
+            @media (min-width: 1536px) {
+                max-width: 160px;
+            }
+        }
+
+        .header__grid {
+            gap: 5px;
+
+            @media (min-width: 1440px) {
+                gap: 40px;
+            }
+        }
+
+        .header-menu-btn__line {
+            height: 2px;
+        }
+
+        .header-menu-btn svg {
+            width: 15px;
+            height: 15px;
         }
     }
 }

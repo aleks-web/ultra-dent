@@ -9,95 +9,96 @@
 
   <body>
 
-    <!-- Start First Screen section -->
-    <div class="first-screen">
+    <!-- Start Header Block -->
+    <header class="header">
+      <div class="container header__container">
 
-      <header class="header">
-        <div class="container header__container">
+        <div class="header__grid">
 
-          <div class="header__grid">
+          <div class="header__item header__item-logo">
+            <img src="./src/img/logo.svg" class="header__item-logo-img" alt="logo">
+          </div>
 
-            <div class="header__item header__item-logo">
-              <img src="./src/img/logo.svg" class="header__item-logo-img" alt="logo">
+          <div class="header__item header__item-top-menu">
+            <ul class="header-top-menu">
+              <li><a class="header-top-menu__link" href="#">Почему мы?</a></li>
+              <li><a class="header-top-menu__link" href="#">Где всё происходит</a></li>
+              <li><a class="header-top-menu__link" href="#">Как это работает</a></li>
+              <li><a class="header-top-menu__link" href="#">Отзывы</a></li>
+              <li><a class="header-top-menu__link" href="#">О нас</a></li>
+              <li><a class="header-top-menu__link" href="#">Контакты</a></li>
+            </ul>
+          </div>
+
+          <div class="header__item header__item-work-time">
+            <div class="header-work-time">
+              <div class="header-work-time__svg">
+                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM14.2 14.2L9 11V5H10.5V10.2L15 12.9L14.2 14.2Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="header-work-time__label">Время работы:</span>
+              <span class="header-work-time__time">Ежедневно с 9:00 до 20:00</span>
             </div>
+          </div>
 
-            <div class="header__item header__item-top-menu">
-              <ul class="header-top-menu">
-                <li><a class="header-top-menu__link" href="#">Почему мы?</a></li>
-                <li><a class="header-top-menu__link" href="#">Где всё происходит</a></li>
-                <li><a class="header-top-menu__link" href="#">Как это работает</a></li>
-                <li><a class="header-top-menu__link" href="#">Отзывы</a></li>
-                <li><a class="header-top-menu__link" href="#">О нас</a></li>
-                <li><a class="header-top-menu__link" href="#">Контакты</a></li>
-              </ul>
-            </div>
+          <div class="header__item header__item-btns">
+            <button class="simple-btn header-callback-btn">Оставить заявку</button>
 
-            <div class="header__item header__item-work-time">
-              <div class="header-work-time">
+            <button class="simple-btn header-menu-btn" data-mobile-menu-btn="header">
+              <span class="header-menu-btn__line"></span>
+              <span class="header-menu-btn__line"></span>
+              <span class="header-menu-btn__line"></span>
+              <svg width="20" height="20" class="header-menu-btn__close" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.3387 0.45375C18.7537 -0.13125 17.8087 -0.13125 17.2237 0.45375L9.88875 7.77375L2.55375 0.43875C1.96875 -0.14625 1.02375 -0.14625 0.43875 0.43875C-0.14625 1.02375 -0.14625 1.96875 0.43875 2.55375L7.77375 9.88875L0.43875 17.2237C-0.14625 17.8087 -0.14625 18.7537 0.43875 19.3387C1.02375 19.9237 1.96875 19.9237 2.55375 19.3387L9.88875 12.0037L17.2237 19.3387C17.8087 19.9237 18.7537 19.9237 19.3387 19.3387C19.9237 18.7537 19.9237 17.8087 19.3387 17.2237L12.0037 9.88875L19.3387 2.55375C19.9087 1.98375 19.9087 1.02375 19.3387 0.45375Z" fill="white"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="header__item header__item-mobile-callback">
+            <button class="simple-btn header-callback-btn">Оставить заявку</button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="header-mobile-menu">
+        <nav class="header-mobile-menu__container container">
+          <div class="header-mobile-menu__wrap">
+  
+            <ul class="header-mobile-menu__menu">
+              <li><a href="#" class="header-mobile-menu__link">Почему мы?</a></li>
+              <li><a href="#" class="header-mobile-menu__link">Где всё происходит?</a></li>
+              <li><a href="#" class="header-mobile-menu__link">Как это работает?</a></li>
+              <li><a href="#" class="header-mobile-menu__link">Отзывы</a></li>
+              <li><a href="#" class="header-mobile-menu__link">О нас</a></li>
+            </ul>
+
+            <div class="header-mobile-menu__other">
+  
+              <div class="header-work-time header-mobile-menu__time">
                 <div class="header-work-time__svg">
                   <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM14.2 14.2L9 11V5H10.5V10.2L15 12.9L14.2 14.2Z" fill="currentColor"/>
+                    <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM14.2 14.2L9 11V5H10.5V10.2L15 12.9L14.2 14.2Z" fill="currentColor"></path>
                   </svg>
                 </div>
                 <span class="header-work-time__label">Время работы:</span>
                 <span class="header-work-time__time">Ежедневно с 9:00 до 20:00</span>
               </div>
+  
+              <button class="simple-btn header-callback-btn header-mobile-menu__btn">Оставить заявку</button>
             </div>
-
-            <div class="header__item header__item-btns">
-              <button class="simple-btn header-callback-btn">Оставить заявку</button>
-
-              <button class="simple-btn header-menu-btn" data-mobile-menu-btn="header">
-                <span class="header-menu-btn__line"></span>
-                <span class="header-menu-btn__line"></span>
-                <span class="header-menu-btn__line"></span>
-                <svg width="20" height="20" class="header-menu-btn__close" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.3387 0.45375C18.7537 -0.13125 17.8087 -0.13125 17.2237 0.45375L9.88875 7.77375L2.55375 0.43875C1.96875 -0.14625 1.02375 -0.14625 0.43875 0.43875C-0.14625 1.02375 -0.14625 1.96875 0.43875 2.55375L7.77375 9.88875L0.43875 17.2237C-0.14625 17.8087 -0.14625 18.7537 0.43875 19.3387C1.02375 19.9237 1.96875 19.9237 2.55375 19.3387L9.88875 12.0037L17.2237 19.3387C17.8087 19.9237 18.7537 19.9237 19.3387 19.3387C19.9237 18.7537 19.9237 17.8087 19.3387 17.2237L12.0037 9.88875L19.3387 2.55375C19.9087 1.98375 19.9087 1.02375 19.3387 0.45375Z" fill="white"/>
-                </svg>
-              </button>
-            </div>
-
-            <div class="header__item header__item-mobile-callback">
-              <button class="simple-btn header-callback-btn">Оставить заявку</button>
-            </div>
-
 
           </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Block -->
 
-        </div>
-
-        <div class="header-mobile-menu">
-          <nav class="header-mobile-menu__container container">
-            <div class="header-mobile-menu__wrap">
-    
-              <ul class="header-mobile-menu__menu">
-                <li><a href="#" class="header-mobile-menu__link">Почему мы?</a></li>
-                <li><a href="#" class="header-mobile-menu__link">Где всё происходит?</a></li>
-                <li><a href="#" class="header-mobile-menu__link">Как это работает?</a></li>
-                <li><a href="#" class="header-mobile-menu__link">Отзывы</a></li>
-                <li><a href="#" class="header-mobile-menu__link">О нас</a></li>
-              </ul>
-
-              <div class="header-mobile-menu__other">
-    
-                <div class="header-work-time header-mobile-menu__time">
-                  <div class="header-work-time__svg">
-                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM14.2 14.2L9 11V5H10.5V10.2L15 12.9L14.2 14.2Z" fill="currentColor"></path>
-                    </svg>
-                  </div>
-                  <span class="header-work-time__label">Время работы:</span>
-                  <span class="header-work-time__time">Ежедневно с 9:00 до 20:00</span>
-                </div>
-    
-                <button class="simple-btn header-callback-btn header-mobile-menu__btn">Оставить заявку</button>
-              </div>
-
-            </div>
-          </nav>
-        </div>
-
-      </header>
+    <!-- Start First Screen section -->
+    <div class="first-screen">
 
       <div class="first-screen-timer first-screen__timer">
         <div class="first-screen-timer__container container">
@@ -108,22 +109,22 @@
             <div class="first-screen-timer__timer">
               
 
-              <div class="card-time">
+              <div class="card-time" id="timer-days">
                 <div class="card-time__time">5</div>
                 <div class="card-time__unit">дни</div>
               </div>
               <span class="card-time-delimiter"></span>
-              <div class="card-time">
+              <div class="card-time" id="timer-hours">
                 <div class="card-time__time">02</div>
                 <div class="card-time__unit">часов</div>
               </div>
               <span class="card-time-delimiter"></span>
-              <div class="card-time">
+              <div class="card-time" id="timer-minutes">
                 <div class="card-time__time">29</div>
                 <div class="card-time__unit">минут</div>
               </div>
               <span class="card-time-delimiter"></span>
-              <div class="card-time">
+              <div class="card-time" id="timer-seconds">
                 <div class="card-time__time">46</div>
                 <div class="card-time__unit">секунд</div>
               </div>
@@ -373,7 +374,6 @@
     </div>
     <!-- End Reviews section -->
 
-
     <!-- Start Reviews section -->
      <div class="discount-section">
       <div class="discount-section__container container">
@@ -404,6 +404,36 @@
       </div>
      </div>
     <!-- End Reviews section -->
+
+    <!-- Start Result section -->
+    <div class="result-section">
+      <div class="result-section__container container">
+        <h2 class="section-title result-section__title">Вот как меняется человек после имплантации</h2>
+
+        <div class="result-section__wrap">
+          
+          <div class="result-section__item">
+
+            <div class="card-phone" data-video-id="E1djLnHLSdI">
+              <div class="card-phone__border">
+                <img class="card-phone__border-img" src="./src/img/phone.png" alt="phone-border">
+                <img class="card-phone__preview" src="./src/img/discount-image-block.jpg" alt="preview">
+
+                <div class="card-phone__btn-play">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM8 13.5V6.5C8 6.09 8.47 5.85 8.8 6.1L13.47 9.6C13.74 9.8 13.74 10.2 13.47 10.4L8.8 13.9C8.47 14.15 8 13.91 8 13.5Z" fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- End Result section -->
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

@@ -1,0 +1,56 @@
+/*
+    Секция с результатами
+*/
+.result-section {
+    padding: 30px 0;
+    background-color: white;
+
+    @media (min-width: 450px) {
+        padding: 30px 0;
+    }
+
+    @media (min-width: 600px) {
+        padding: 40px 0;
+    }
+
+    @media (min-width: 800px) {
+        padding: 50px 0;
+    }
+
+    @media (min-width: 960px) {
+        padding: 60px 0;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 70px 0;
+    }
+
+    &__container {
+
+    }
+
+    &__title {
+        padding-bottom: 15px;
+
+        @media (min-width: 300px) {
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 340px) {
+            padding-bottom: 25px;
+        }
+
+        @media (min-width: 450px) {
+            padding-bottom: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__item {
+        width: 100%;
+    }
+}
