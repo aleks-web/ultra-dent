@@ -1,0 +1,289 @@
+// Карточка даты или времени
+.card-time {
+    background-color: white;
+    color: #6F6A6A;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 10px 5px;
+    max-width: max-content;
+    line-height: 8px;
+    min-width: 41px;
+
+    @media (min-width: 300px) {
+        line-height: 16px;
+        min-width: 55px;
+    }
+
+    @media (min-width: 340px) {
+        line-height: normal;
+        min-width: 66px;
+    }
+
+    @media (min-width: 960px) {
+        min-width: 80px;
+        padding: 10px 15px 11px 15px;
+    }
+
+    &__time {
+        font-size: 12px;
+
+        @media (min-width: 300px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 340px) {
+            font-size: 24px;
+        }
+
+        @media (min-width: 800px) {
+            font-size: 28px;
+        }
+    }
+
+    &__unit {
+        font-size: 8px;
+
+        @media (min-width: 300px) {
+            font-size: 12px;
+        }
+    }
+}
+
+// Разделитель для card-time карточек
+.card-time-delimiter {
+    &:before {
+        content: ':';
+        font-weight: 600;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+
+        @media (min-width: 300px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 340px) {
+            font-size: 24px;
+        }
+
+        @media (min-width: 450px) {
+            font-size: 28px;
+        }
+
+        @media (min-width: 800px) {
+            font-size: 32px;
+        }
+    }
+}
+
+// Карточка отзыва
+.card-rev {
+    --main-card-color: #FB9A49;
+    border: 1px solid var(--main-card-color);
+    padding: 8px; //16px
+    border-radius: 20px; //40px
+    width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @container (min-width: 300px) {
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    @container (min-width: 450px) {
+        padding: 15px;
+        border-radius: 40px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-weight: 600;
+    }
+
+    &__author {
+        color: #2F6BEA;
+        font-size: 16px; // 32px
+    }
+
+    &__date {
+        color: #B5B5B5;
+        font-size: 15px; // 22px
+    }
+}
+
+// Картчока шага
+.card-step {
+
+}
+
+// Карточка-достижение
+.card-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 16px;
+    font-size: 12px;
+    background-color: white;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 0 30px -10px #d3d3d3;
+
+    @media (min-width: 300px) {
+        font-size: 14px;
+    }
+
+    @media (min-width: 340px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 25px 10px 10px;
+    }
+
+    @media (min-width: 600px) {
+        font-size: 15px;
+    }
+
+    &__desc {
+        text-align: center;
+
+        @media (min-width: 340px) {
+            text-align: left;
+        }
+    }
+
+    &__img {
+        position: relative;
+    }
+
+    &_1 {
+        @media (min-width: 450px) {
+            height: 117px;
+        }
+
+        .card-progress__img {
+            @media (min-width: 450px) {
+                top: -13px;
+            }
+        }
+    }
+
+    &_2 {
+        @media (min-width: 450px) {
+            height: 110px;
+        }
+
+        .card-progress__img {
+            @media (min-width: 450px) {
+                top: -7px;
+            }
+        }
+    }
+
+    &_3 {
+        @media (min-width: 450px) {
+            height: 115px;
+        }
+
+        .card-progress__img {
+            @media (min-width: 450px) {
+                top: -13px;
+            }
+        }
+    }
+}
+
+
+// Карточка почему
+.card-why {
+    --main-card-color: #FB9A49;
+    border: 1px solid var(--main-card-color);
+    padding: 8px; //16px
+    border-radius: 20px; //40px
+    width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @container (min-width: 300px) {
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    @container (min-width: 450px) {
+        padding: 15px;
+        border-radius: 40px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        @container (min-width: 300px) {
+            font-size: 16px;
+            gap: 8px;
+        }
+
+        @container (min-width: 450px) {
+            font-size: 18px;
+            gap: 10px;
+        }
+
+        @container (min-width: 600px) {
+            font-size: 24px;
+        }
+    }
+
+    &__step {
+        background-color: var(--main-card-color);
+        border-radius: 50px;
+        max-width: max-content;
+        padding: 3px 14px;
+        color: white;
+
+        @container (min-width: 450px) {
+            padding: 3px 20px;
+        }
+
+        @container (min-width: 600px) {
+            padding: 5px 25px;
+        }
+    }
+
+    &__title {
+        
+    }
+
+    &__image {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid var(--main-card-color);
+        aspect-ratio: 16 / 9;
+
+        @container (min-width: 300px) {
+            border-radius: 22px;
+        }
+
+        @container (min-width: 450px) {
+            border-radius: 35px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}

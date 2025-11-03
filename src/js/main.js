@@ -2,18 +2,22 @@ import './../scss/style.scss';
 import './../font/stylesheet.css';
 
 class SiteMenu {
-    mobileElementTrigger = [];
     postfix = 8;
-    mobileMenu = document.querySelector('.header-mobile-menu');
+    menu = document.querySelector('.header-mobile-menu');
+    elementTrigger = null;
+    resizeObserver = null;
 
-    constructor(elementTrigger) {
-        this.setMobileElementTrigger(elementTrigger);
+    constructor(elementTrigger = null) {
+        if (elementTrigger) {
+            this.setMobileElementTrigger(elementTrigger);
+        }
     }
 
-    isDOM = el => el instanceof Node;
+    // Метод проверки, является ли элемент узлом DOM
+    isDOM(el) { return el instanceof Node };
 
     // Создание мобильного меню
-    createMobileMenu() {
+    createMenu() {
         let mainMenuLinks = document.querySelectorAll(".header-top-menu .header-top-menu__link");
         let mobileMenuEl = document.createElement("div");
         let mobileMenuContainer = document.createElement("div");
@@ -23,7 +27,9 @@ class SiteMenu {
         mobileMenuEl.append(mobileMenuContainer);
         mobileMenuEl.style.position = "absolute";
         mobileMenuEl.style.width = "100%";
-
+        mobileMenuEl.style.top = this.elementTrigger.getBoundingClientRect().bottom + this.postfix + 'px';
+        
+        mobileMenuContainer.style.boxShadow = "0px 0px 15px -8px #9d9d9d";
         mobileMenuContainer.style.borderRadius = "8px";
         mobileMenuContainer.style.overflow = "hidden";
         mobileMenuContainer.style.backgroundColor = "white";
@@ -69,48 +75,36 @@ class SiteMenu {
         }
       
         requestAnimationFrame(step);
-      }
-
-    openMobileMenu(topPosition, element) {
-
-        if (!Number.isInteger(Number.parseInt(topPosition))) {
-            throw "Невозможно открыть мобильное меню";
-        }
-
-        if (this.mobileMenu) {
-            return;
-        }
-
-        if (window.innerWidth < 1440) {
-            let mobileMenu = this.createMobileMenu();
-            mobileMenu.style.top = topPosition + 'px';
-            document.body.append(mobileMenu);
-            this.mobileMenu = mobileMenu;
-            this.fadeUp(this.mobileMenu);
-            element.classList.add('active');
-            this.setObserver(element);
-        }
     }
 
+    // Открытие меню
+    openMenu() {
+        if (window.innerWidth >= 1440) {
+            return;
+        }
+        
+        this.fadeUp(this.menu);
+
+        this.elementTrigger.classList.add('active');
+        this.menu.classList.add('active');
+        this.setObserver();
+    }
+
+    // Устанавливаем элемент DOM как элемент триггер, клик по которому откроет меню
     setMobileElementTrigger(elementTrigger) {
         if (this.isDOM(elementTrigger)) {
 
             const handlerClick = (event) => {
-                if (!elementTrigger.classList.contains('active')) {
-                    let menuBtnRec = elementTrigger.getBoundingClientRect();
-                    this.openMobileMenu(menuBtnRec.bottom + this.postfix, elementTrigger);
+                this.elementTrigger = elementTrigger;
+
+                if (elementTrigger.classList.contains('active')) {
+                    this.closeMenu();
                 } else {
-                    this.closeMobileMenu();
+                    this.openMenu();
                 }
-                
             }
 
             elementTrigger.addEventListener('click', handlerClick);
-
-            this.mobileElementTrigger.push({
-                elementTrigger: elementTrigger,
-                handlerClick: handlerClick 
-            });
 
             return true;
         } else {
@@ -118,31 +112,35 @@ class SiteMenu {
         }
     }
 
-    closeMobileMenu() {
-        this.mobileElementTrigger.forEach(el => {
-            if (this.isDOM(el.elementTrigger)) {
-                let isActive = el.elementTrigger.classList.contains('active');
-
-                if (isActive) {
-                    el.elementTrigger.classList.remove('active');
-                    document.querySelector(".header-mobile-menu").remove();
-                    this.mobileMenu = null;
-                }
-            }
-        });
+    // Метод закрытия меню
+    closeMenu() {
+        if (this.elementTrigger.classList.contains('active') && this.menu) {
+            this.elementTrigger.classList.remove('active');
+            this.menu.classList.remove('active');
+        }
     }
 
-    setObserver(elTrigger, menu = this.mobileMenu) {
-        const resizeObserver = new ResizeObserver((entries) => {
-            if (window.innerWidth < 1440) {
-                menu.style.top = elTrigger.getBoundingClientRect().bottom + this.postfix + 'px';
+    setObserver() {
+        this.resizeObserver = new ResizeObserver((entries) => {
+            if (this.menu && window.innerWidth < 1440) {
+                this.menu.style.top = this.elementTrigger.getBoundingClientRect().bottom + this.postfix + 'px';
+                this.menu.style.height = 'calc(100dvh - ' + (this.elementTrigger.getBoundingClientRect().bottom + this.postfix * 2) + 'px)';
             } else {
-                this.closeMobileMenu();
+                this.closeMenu();
             }
-        });
+        }).observe(this.menu);
+    }
 
-        resizeObserver.observe(this.mobileMenu);
+    destroyObserver() {
+        if (this.resizeObserver) {
+            this.resizeObserver.unobserve();
+            this.resizeObserver = null;
+        }
     }
 }
 
-window.siteMenu = new SiteMenu(document.querySelector('[data-menu-btn]'));
+window.siteMenu = new SiteMenu();
+
+document.querySelectorAll('[data-mobile-menu-btn]').forEach(elTrigger => {
+    window.siteMenu.setMobileElementTrigger(elTrigger);
+});

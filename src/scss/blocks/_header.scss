@@ -255,3 +255,118 @@
         font-weight: bold;
     }
 }
+
+
+/* Мобильное меню */
+.header-mobile-menu {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    z-index: -1 !important;
+
+    --padding-wrap: 10px;
+
+    &.active {
+        z-index: 1000 !important;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: end;
+        height: inherit;
+    }
+
+    &__wrap {
+        box-shadow: rgb(157, 157, 157) 0px 0px 15px -8px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #EFF1F3;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        max-width: 300px;
+        width: 100%;
+
+        @media (min-width: 800px) {
+            max-width: 250px;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+
+        @media (min-width: 300px) {
+            gap: 2px;
+        }
+    }
+
+    &__other {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 var(--padding-wrap);
+        margin-top: 10px;
+        height: 100%;
+
+        & > * {
+            margin-top: auto;
+        }
+    }
+
+    &__link {
+        display: flex;
+        padding: 5px var(--padding-wrap);
+        font-weight: 500;
+        text-decoration: none;
+        color: rgb(104, 104, 104);
+        justify-content: center;
+        transition: all .2s;
+        font-size: 14px;
+        text-align: center;
+
+        @media (min-width: 300px) {
+            font-size: 16px;
+            padding: var(--padding-wrap);
+        }
+
+        &:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+    }
+
+    &__time {
+        grid-template-areas:
+            "svg label"
+            "svg time";
+        justify-content: center;
+        font-size: 11px;
+
+        @media (min-width: 300px) {
+            font-size: 12px;
+        }
+
+        @media (min-width: 340px) {
+            font-size: 13px;
+        }
+
+        @media (min-width: 450px) {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 800px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        @media (min-width: 450px) {
+            display: none;
+        }
+    }
+}

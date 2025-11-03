@@ -2,4 +2,14 @@
     --main-color: #FF7700;
     --main-color-hover: #FF9131;
     --main-color-active: #E46A00;
+
+    --container-padding: 10px;
+
+    @media (min-width: 300px) {
+        --container-padding: 15px;
+    }
+
+    @media (min-width: 1440px) {
+        --container-padding: 20px;
+    }
 }

@@ -1,0 +1,88 @@
+.why {
+    padding-bottom: 25px;
+
+    @media (min-width: 300px) {
+        padding-bottom: 30px;
+    }
+
+    @media (min-width: 340px) {
+        padding-bottom: 40px;
+    }
+
+    @media (min-width: 450px) {
+        padding-bottom: 50px;
+    }
+
+    @media (min-width: 960px) {
+        padding-bottom: 60px;
+    }
+
+    &__container {
+        
+    }
+
+    &__title {
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+        @media (min-width: 300px) {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 450px) {
+            margin-top: 15px;
+            margin-bottom: 33px;
+        }
+
+        @media (min-width: 600px) {
+            margin-top: 20px;
+            margin-bottom: 36px;
+        }
+    }
+
+    &__why {
+        display: grid;
+        grid-template-areas: 
+            "item1"
+            "item2"
+            "item3";
+        gap: 10px;
+
+        @media (min-width: 300px) {
+            gap: 15px;
+        }
+
+        @media (min-width: 450px) {
+            grid-template-areas: 
+                "item1 item2"
+                "item3 item3";
+        }
+
+        @media (min-width: 800px) {
+            grid-template-areas: 
+                "item1 item2 item3";
+        }
+
+        @media (min-width: 1440px) {
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        container-type: inline-size;
+        width: 100%;
+
+        &:nth-child(1) {
+            grid-area: item1;
+        }
+
+        &:nth-child(2) {
+            grid-area: item2;
+        }
+
+        &:nth-child(3) {
+            grid-area: item3;
+        }
+    }
+}

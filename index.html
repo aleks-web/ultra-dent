@@ -9,7 +9,8 @@
 
   <body>
 
-    <section class="first-screen">
+    <!-- Start First Screen section -->
+    <div class="first-screen">
 
       <header class="header">
         <div class="container header__container">
@@ -46,7 +47,7 @@
             <div class="header__item header__item-btns">
               <button class="simple-btn header-callback-btn">Оставить заявку</button>
 
-              <button class="simple-btn header-menu-btn" data-menu-btn>
+              <button class="simple-btn header-menu-btn" data-mobile-menu-btn="header">
                 <span class="header-menu-btn__line"></span>
                 <span class="header-menu-btn__line"></span>
                 <span class="header-menu-btn__line"></span>
@@ -65,10 +66,240 @@
 
         </div>
 
+        <div class="header-mobile-menu">
+          <nav class="header-mobile-menu__container container">
+            <div class="header-mobile-menu__wrap">
+    
+              <ul class="header-mobile-menu__menu">
+                <li><a href="#" class="header-mobile-menu__link">Почему мы?</a></li>
+                <li><a href="#" class="header-mobile-menu__link">Где всё происходит?</a></li>
+                <li><a href="#" class="header-mobile-menu__link">Как это работает?</a></li>
+                <li><a href="#" class="header-mobile-menu__link">Отзывы</a></li>
+                <li><a href="#" class="header-mobile-menu__link">О нас</a></li>
+              </ul>
+
+              <div class="header-mobile-menu__other">
+    
+                <div class="header-work-time header-mobile-menu__time">
+                  <div class="header-work-time__svg">
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM14.2 14.2L9 11V5H10.5V10.2L15 12.9L14.2 14.2Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                  <span class="header-work-time__label">Время работы:</span>
+                  <span class="header-work-time__time">Ежедневно с 9:00 до 20:00</span>
+                </div>
+    
+                <button class="simple-btn header-callback-btn header-mobile-menu__btn">Оставить заявку</button>
+              </div>
+
+            </div>
+          </nav>
+        </div>
+
       </header>
 
-    </section>
+      <div class="first-screen-timer first-screen__timer">
+        <div class="first-screen-timer__container container">
+          <span class="first-screen-timer__label">всего 35 купонов со скидкой до конца недели</span>
+
+          <div class="first-screen-timer__timer-wrap">
+            <span class="first-screen-timer__label">До конца акции осталось:</span>
+            <div class="first-screen-timer__timer">
+              
+
+              <div class="card-time">
+                <div class="card-time__time">5</div>
+                <div class="card-time__unit">дни</div>
+              </div>
+              <span class="card-time-delimiter"></span>
+              <div class="card-time">
+                <div class="card-time__time">02</div>
+                <div class="card-time__unit">часов</div>
+              </div>
+              <span class="card-time-delimiter"></span>
+              <div class="card-time">
+                <div class="card-time__time">29</div>
+                <div class="card-time__unit">минут</div>
+              </div>
+              <span class="card-time-delimiter"></span>
+              <div class="card-time">
+                <div class="card-time__time">46</div>
+                <div class="card-time__unit">секунд</div>
+              </div>
+
+
+
+            </div>
+            <span class="first-screen-timer__label">Купонов осталось: 8 из 35</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="first-screen__bg-wrap">
+
+        <div class="first-screen__bg">
+          
+          <img class="first-screen__bg-img first-screen__bg-img_mobile" src="./src/img/first-screen-mobile-2.png" alt="bg-mobile">
+          <img class="first-screen__bg-img first-screen__bg-img_desktop" src="./src/img/first-screen-desktop-2.png" alt="bg-desktop">
+
+          <div class="first-screen__bg-plates">
+            <div class="plate first-screen__plate first-screen__plate_1">Раз и навсегда</div>
+            <div class="plate first-screen__plate first-screen__plate_2">Восстановим утраченные зубы</div>
+            <div class="plate first-screen__plate first-screen__plate_3">За 1 день</div>
+          </div>
+
+          <button class="simple-btn order-btn first-screen__bg-order-btn">
+            <span>Оставить заявку</span>
+            <span class="order-btn__icon">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.1237 13.3333C17.377 13.3333 16.7904 12.7333 16.7904 12V4.54667L2.27036 19.0667C1.75036 19.5867 0.910364 19.5867 0.390366 19.0667C-0.129635 18.5467 -0.129635 17.7067 0.390366 17.1867L14.9104 2.66667H7.45703C6.7237 2.66667 6.1237 2.06667 6.1237 1.33333C6.1237 0.6 6.7237 0 7.45703 0H18.1237C18.857 0 19.457 0.6 19.457 1.33333V12C19.457 12.7333 18.857 13.3333 18.1237 13.3333Z" fill="#222222"/>
+              </svg>  
+            </span>
+          </button>
+
+          <div class="first-screen__bg-desc">
+            <span>С помощью <strong>премиальных имплантов</strong> и цифровых технологий после удаления зубов, парадонтита или натирающих паротезов</span>
+            <hr>
+          </div>
+
+          <div class="first-screen__gradient"></div>
+        </div>
+      </div>
+
+      <div class="first-screen__info">
+        <div class="first-screen__info-container container">
+          <div>С помощью <strong>премиальных имплантов</strong> и цифровых технологий после удаления зубов, парадонтита или натирающих паротезов</div>
+          <hr>
+          <button class="simple-btn order-btn first-screen__order-btn">
+            <span>Оставить заявку</span>
+            <span class="order-btn__icon">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.1237 13.3333C17.377 13.3333 16.7904 12.7333 16.7904 12V4.54667L2.27036 19.0667C1.75036 19.5867 0.910364 19.5867 0.390366 19.0667C-0.129635 18.5467 -0.129635 17.7067 0.390366 17.1867L14.9104 2.66667H7.45703C6.7237 2.66667 6.1237 2.06667 6.1237 1.33333C6.1237 0.6 6.7237 0 7.45703 0H18.1237C18.857 0 19.457 0.6 19.457 1.33333V12C19.457 12.7333 18.857 13.3333 18.1237 13.3333Z" fill="#222222"/>
+              </svg>  
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!-- End First Screen section -->
+
+    <!-- Start Progress section -->
+    <div class="progress">
+      <div class="progress__container container">
+
+        <div class="card-progress card-progress_1 progress__card">
+          <div class="card-progress__img">
+            <img src="./src/img/progress-1.png" alt="progress-1">
+          </div>
+          <div class="card-progress__desc">
+            <strong>Первая в России</strong> сеть стоматологий с сертификатом <strong>независимого агентства экспертизы</strong> и <strong>консалтинга «Мед Эксперт Консалт»</strong>
+          </div>
+        </div>
+
+        <div class="card-progress card-progress_2 progress__card">
+          <div class="card-progress__img">
+            <img src="./src/img/progress-2.png" alt="progress-1">
+          </div>
+          <div class="card-progress__desc">
+            Трижды входим в <strong>ТОП-10 лучших</strong> частных стоматологий (2021, 2022, 2024) в разных категориях и не собираемся останавливаться
+          </div>
+        </div>
+
+        <div class="card-progress card-progress_3 progress__card">
+          <div class="card-progress__img">
+            <img src="./src/img/progress-3.png" alt="progress-1">
+          </div>
+          <div class="card-progress__desc">
+            Наши пациенты определились с <strong>выбором лучшей стоматологии.</strong> Приходите, мы поможем определиться и Вам
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End Progress section -->
+
+    <!-- Start Why section -->
+    <div class="why">
+      <div class="why__container container">
+        <h2 class="section-title why__title">3 веских причины<br>сделать имплантацию уже сейчас</h2>
+
+        <div class="why__why">
+          
+          <div class="why__item">
+            <div class="card-why">
+              <div class="card-why__header">
+                <span class="card-why__step">1</span>
+                <span class="card-why__title">Быстрое восстановление жевания и улыбки</span>
+              </div>
+
+              <div class="card-why__image">
+                <img src="./src/img/card.png" alt="image">
+              </div>
+            </div>
+          </div>
+
+          <div class="why__item">
+            <div class="card-why">
+              <div class="card-why__header">
+                <span class="card-why__step">2</span>
+                <span class="card-why__title">Уходят ограничения в еде и дискомфорт</span>
+              </div>
+
+              <div class="card-why__image">
+                <img src="./src/img/card.png" alt="image">
+              </div>
+            </div>
+          </div>
+
+          <div class="why__item">
+            <div class="card-why">
+              <div class="card-why__header">
+                <span class="card-why__step">3</span>
+                <span class="card-why__title">Никакой боли - точная и щадящая установка</span>
+              </div>
+
+              <div class="card-why__image">
+                <img src="./src/img/card.png" alt="image">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Why section -->
     
+    <!-- Start Reviews section -->
+    <div class="reviews">
+      <div class="reviews__container container">
+        <h2 class="section-title reviews__title">Отзывы</h2>
+
+        <div class="reviews__list">
+
+          <div class="reviews__rev">
+            <div class="card-rev">
+
+              <div class="card-rev__header">
+                <div class="card-rev__author">Светлана, 36 лет</div>
+                
+                <div class="card-rev__info">
+                  <div class="card-rev__date">12 Апреля 2026</div>
+                  <div class="card-rev__rating">
+                    рейтинг
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Reviews section -->
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

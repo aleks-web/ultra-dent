@@ -21,3 +21,54 @@
         background-color: var(--main-color-active);
     }
 }
+
+/* Кнопка заказа */
+.order-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    background-color: #FFCC00;
+    color: #222222;
+    font-weight: 600;
+    font-size: 14px;
+    gap: 20px;
+
+    @media (min-width: 300px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: 340px) {
+        font-size: 18px;
+    }
+
+    &:hover {
+        background-color: #FFDB49;
+
+        .order-btn__icon {
+            background-color: var(--main-color-hover);
+        }
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: var(--main-color);
+        border-radius: 6px;
+
+        @media (min-width: 300px) {
+            width: 35px;
+            height: 35px;
+        }
+
+        svg {
+            display: flex;
+            width: 20px;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.progress {
+    padding: 0 0 10px 0;
+    background-color: white;
+    z-index: 2;
+    position: relative;
+
+    @media (min-width: 800px) {
+        height: 236px;
+    }
+
+    &__container {
+        container-type: inline-size scroll-state;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        top: -20px;
+
+        @media (min-width: 600px) {
+            gap: 35px;
+        }
+
+        @media (min-width: 800px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__card {
+        @media (min-width: 800px) {
+            position: absolute;
+            max-width: 430px;
+        }
+
+        &:nth-child(1) {
+            @media (min-width: 800px) {
+                top: -45px;
+                z-index: 2;
+            }
+        }
+
+        &:nth-child(2) {
+            @media (min-width: 800px) {
+                top: 73px;
+                z-index: 1;
+                transform: rotate(4deg) translateX(-198px);
+            }
+        }
+
+        &:nth-child(3) {
+            @media (min-width: 800px) {
+                top: 110px;
+                z-index: 0;
+                transform: rotate(-3deg) translateX(180px);
+            }
+
+            @media (min-width: 900px) {
+                transform: rotate(-3deg) translateX(210px);
+            }
+        }
+    }
+}
