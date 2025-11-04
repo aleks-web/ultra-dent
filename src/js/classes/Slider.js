@@ -4,6 +4,7 @@
 export default class Slider {
     wrapper;
     paginationElements;
+    countSlides;
 
     constructor() {
 
@@ -11,19 +12,16 @@ export default class Slider {
 
     init() {
         // Обертка слайдера. Контейнер
-        const sliderWrap = document.querySelector('.reviews-section__list');
-        const countSlides = sliderWrap.children.length;
-        const paginationElements = this.#createPagination(countSlides);
-        sliderWrap.after(paginationElements);
+        this.wrapper = document.querySelector('.reviews-section__list');
+        this.countSlides = this.wrapper.children.length;
+        this.paginationElements = this.#createPagination(this.countSlides);
+        this.wrapper.after(this.paginationElements);
 
-        this.wrapper = sliderWrap;
-        this.paginationElements = paginationElements;
+        this.paginationElements.querySelector('[data-slide="1"]').classList.add('reviews-section__pagination-btn_active');
 
-        paginationElements.querySelector('[data-slide="1"]').classList.add('reviews-section__pagination-btn_active');
+        this.wrapper.children[0].classList.add('reviews-section__rev_active');
 
-        sliderWrap.children[0].classList.add('reviews-section__rev_active');
-
-        Array.from(paginationElements.children).forEach(btn => {
+        Array.from(this.paginationElements.children).forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const isPageBtn = Number.isInteger(Number.parseInt(btn.dataset.slide));
 
@@ -35,38 +33,71 @@ export default class Slider {
                 }
             }); 
         });
+
+        Array.from(this.wrapper.children).forEach((slide, index) => {
+            slide.dataset.slide = index + 1;
+        });
+
+        this.#updateArrows();
     }
 
     #prevSlide() {
-        console.log('prev');
+        const prevSlide = Number(this.#getCurrentSlide().dataset.slide) - 1;
+        this.#toggleSlide(prevSlide);
+    }
+
+    #getCurrentSlide() {
+        let currentSlide = null;
+        Array.from(this.wrapper.children).forEach(slide => {
+            if (slide.classList.contains('reviews-section__rev_active')) {
+                currentSlide = slide;
+            }
+        });
+        return currentSlide;
     }
 
     #nextSlide() {
-        const nextSlide = null;
-        Array.from(this.sliderWrap.children).forEach(slide => {
-            if (slide.classList.contains('reviews-section__rev_active')) {
-                nextSlide = slide.nextElementSibling;
-                slide.classList.remove('reviews-section__rev_active');
-            }
-            if (nextSlide) {
-                nextSlide.classList.add('reviews-section__rev_active');
-            }
-        });
+        const nextSlide = Number(this.#getCurrentSlide().dataset.slide) + 1;
+        this.#toggleSlide(nextSlide);
     }
 
     #toggleSlide(slideNum) {
+        this.#removeActiveClass();
+
+        if (slideNum === 0) {
+            slideNum = this.countSlides;
+        } else if (slideNum > this.countSlides) {
+            slideNum = 1;
+        }
+
+        this.wrapper.querySelector(`.reviews-section__rev[data-slide="${slideNum}"]`)?.classList.add('reviews-section__rev_active');
+        this.paginationElements.querySelector(`.reviews-section__pagination-btn[data-slide="${slideNum}"]`)?.classList.add('reviews-section__pagination-btn_active');
+        this.#updateArrows();
+    }
+
+    #updateArrows() {
+        console.log(Number(this.#getCurrentSlide().dataset.slide));
+
+        if (Number(this.#getCurrentSlide().dataset.slide) === 1) {
+            this.paginationElements.querySelector('.reviews-section__pagination-prev').classList.add('reviews-section__pagination-prev_disabled');
+        } else {
+            this.paginationElements.querySelector('.reviews-section__pagination-prev').classList.remove('reviews-section__pagination-prev_disabled');
+        }
+
+        if (Number(this.#getCurrentSlide().dataset.slide) === this.countSlides) {
+            this.paginationElements.querySelector('.reviews-section__pagination-next').classList.add('reviews-section__pagination-next_disabled');
+        } else {
+            this.paginationElements.querySelector('.reviews-section__pagination-next').classList.remove('reviews-section__pagination-next_disabled');
+        }
+    }
+
+    #removeActiveClass() {
         Array.from(this.wrapper.children).forEach(slide => {
             slide.classList.remove('reviews-section__rev_active');
         });
 
-        this.wrapper.querySelector(`.reviews-section__rev:nth-child(${slideNum})`).classList.add('reviews-section__rev_active');
-
         Array.from(this.paginationElements.children).forEach(btn => {
             btn.classList.remove('reviews-section__pagination-btn_active');
-
-            if (btn.dataset.slide == slideNum) {
-                btn.classList.add('reviews-section__pagination-btn_active');
-            }
         });
     }
 

@@ -67,6 +67,14 @@
         display: flex;
         gap: 10px;
     }
+}
+
+
+
+.slider {
+    &__items {
+        overflow: hidden;
+    }
 
     &__pagination {
         display: flex;
@@ -85,6 +93,11 @@
 
             &:hover {
                 color: var(--main-color);
+            }
+
+            &_disabled {
+                opacity: 0.4;
+                pointer-events: none;
             }
         }
 
