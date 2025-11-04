@@ -21,23 +21,5 @@ import "./init/useHeader"; // Для работы шапки сайта
 /* Import useMobileMenu */
 import "./init/useMobileMenu"; // Для мобильного меню
 
-import Slider3 from "./classes/Slider3";
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const slider = new Slider3('.slider', {
-        breakpoints: [
-            {
-                point: 0,
-                countSlides: 1
-            },
-            {
-                point: 600,
-                countSlides: 2
-            }
-        ]
-    });
-
-
-
-});
+/* Import useSlider */
+import "./init/useSlider"; // Для слайдера отзывов

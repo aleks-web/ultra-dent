@@ -96,9 +96,13 @@ export default class SiteMenu {
 
     // Метод закрытия меню
     closeMenu() {
-        if (this.elementTrigger.classList.contains('active') && this.menu) {
+        if (this.elementTrigger) {
             this.elementTrigger.classList.remove('active');
+        }
+        
+        if (this.menu) {
             this.menu.classList.remove('active');
+            this.menu.style.height = 0;
             this.menu.style.opacity = 0;
         }
     }

@@ -65,7 +65,6 @@ export default class Timer {
     isElementsReady() {
         for (let el of this.getElements()) {
             if (!el || el === null) {
-                console.log(false);
                 return false;
             }
         }

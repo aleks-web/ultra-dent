@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("scroll", function() {
         const header = document.querySelector('.header');
 
-        if (window.scrollY >= 100 && header && !header.classList.contains('header_mini') && header) {
+        if (window.scrollY >= 100 && header && !header.classList.contains('header_mini')) {
             header.classList.add('header_mini');
-        } else if (window.scrollY < 100 && header) {
+        } else if (window.scrollY < 100) {
             header.classList.remove('header_mini');
         }
     });

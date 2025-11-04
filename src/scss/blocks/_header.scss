@@ -146,46 +146,46 @@
         }
     }
 
-    &_mini {
-        --btn-height: 25px;
+    // &_mini {
+    //     --btn-height: 25px;
 
-        @media (min-width: 300px) {
-            --btn-height: 30px;
-        }
+    //     @media (min-width: 300px) {
+    //         --btn-height: 30px;
+    //     }
 
-        @media (min-width: 1440px) {
-            --btn-height: 35px;
-        }
+    //     @media (min-width: 1440px) {
+    //         --btn-height: 35px;
+    //     }
 
-        .header__item-logo-img {
-            max-width: 100px;
+    //     .header__item-logo-img {
+    //         max-width: 100px;
 
-            @media (min-width: 1440px) {
-                max-width: 140px;
-            }
+    //         @media (min-width: 1440px) {
+    //             max-width: 140px;
+    //         }
 
-            @media (min-width: 1536px) {
-                max-width: 160px;
-            }
-        }
+    //         @media (min-width: 1536px) {
+    //             max-width: 160px;
+    //         }
+    //     }
 
-        .header__grid {
-            gap: 5px;
+    //     .header__grid {
+    //         gap: 5px;
 
-            @media (min-width: 1440px) {
-                gap: 40px;
-            }
-        }
+    //         @media (min-width: 1440px) {
+    //             gap: 40px;
+    //         }
+    //     }
 
-        .header-menu-btn__line {
-            height: 2px;
-        }
+    //     .header-menu-btn__line {
+    //         height: 2px;
+    //     }
 
-        .header-menu-btn svg {
-            width: 15px;
-            height: 15px;
-        }
-    }
+    //     .header-menu-btn svg {
+    //         width: 15px;
+    //         height: 15px;
+    //     }
+    // }
 }
 
 .header-callback-btn {
@@ -315,6 +315,7 @@
     opacity: 0;
     top: 0;
     z-index: -1 !important;
+    height: 0;
 
     --padding-wrap: 10px;
 
