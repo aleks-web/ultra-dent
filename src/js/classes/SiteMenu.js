@@ -109,7 +109,7 @@ export default class SiteMenu {
 
     setObserver() {
         this.resizeObserver = new ResizeObserver((entries) => {
-            if (this.menu && window.innerWidth < 1440) {
+            if (this.menu && window.innerWidth < 1440 && this.menu.classList.contains('active')) {
                 this.menu.style.top = this.elementTrigger.getBoundingClientRect().bottom + this.postfix + 'px';
                 this.menu.style.height = 'calc(100dvh - ' + (this.elementTrigger.getBoundingClientRect().bottom + this.postfix * 2) + 'px)';
             } else {
