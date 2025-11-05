@@ -1,10 +1,11 @@
 
 # Выполнение тестового задания для ultradent72.ru
 
+- [Просмотр на github pages](https://aleks-web.github.io/ultra-dent-site/)
 
 ## Исходные данные
 
- - [Макет Figma](https://www.figma.com/design/VZhFBHNqQD8P1aGzK95eg8/%D0%A2%D0%97-%D0%A3%D0%BB%D1%8C%D1%82%D1%80%D0%B0-%D0%B4%D0%B5%D0%BD%D1%82?node-id=0-1&p=f)
+- [Макет Figma](https://www.figma.com/design/VZhFBHNqQD8P1aGzK95eg8/%D0%A2%D0%97-%D0%A3%D0%BB%D1%8C%D1%82%D1%80%D0%B0-%D0%B4%D0%B5%D0%BD%D1%82?node-id=0-1&p=f)
 
 - [Техническое задание](https://docs.google.com/document/d/1Z-ZhpcPlQ39KpzFnLyRg0o5V4isB7rSSuccAOInDPyg/edit?tab=t.0)
 
