@@ -14,10 +14,6 @@
 - [https://t.me/webalexey](https://t.me/webalexey)
 - [Резюме на hh.ru](https://tyumen.hh.ru/resume/ac22fd2bff079f41860039ed1f7a78334f6e66)
 
-### Кто скинул:
-
-- [http://t.me/imademyselfup](http://t.me/imademyselfup)
-
 ## Как посмотреть/проверить
 
 Открываем терминал в удобном месте на компьютере. Вводим следующую команду в терминале:
